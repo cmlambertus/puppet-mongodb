@@ -33,7 +33,7 @@ class Puppet::Provider::Mongodb < Puppet::Provider
       'ipv6' => config['net.ipv6'],
       'allowInvalidHostnames' => config['net.ssl.allowInvalidHostnames'],
       'ssl' => config['net.ssl.mode'],
-      'sslcert' => config['net.ssl.PEMKeyFile'],
+      'sslcert' => config['net.tls.certificateKeyFile'],
       'sslca' => config['net.ssl.CAFile'],
       'auth' => config['security.authorization'],
       'shardsvr' => config['sharding.clusterRole'],
