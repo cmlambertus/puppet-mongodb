@@ -70,7 +70,7 @@ class mongodb::server (
   Optional[Stdlib::Absolutepath] $ssl_ca                        = undef,
   Boolean $ssl_weak_cert                                        = false,
   Boolean $ssl_invalid_hostnames                                = false,
-  Enum['requireSSL', 'preferSSL', 'allowSSL'] $ssl_mode         = 'requireSSL',
+  Enum['requireTLS', 'preferTLS', 'allowTLS'] $ssl_mode         = 'requireTLS',
   Boolean $restart                                              = $mongodb::params::restart,
   Optional[String] $storage_engine                              = undef,
   Boolean $create_admin                                         = $mongodb::params::create_admin,
