@@ -109,10 +109,10 @@ net.maxIncomingConnections: <%= @maxconns %>
 net.http.enabled: <%= ! @nohttpinterface %>
 <% end -%>
 <% if @ssl -%>
-net.ssl.mode: <%= @ssl_mode %>
-net.ssl.PEMKeyFile: <%= @ssl_key %>
+net.tls.mode: <%= @ssl_mode %>
+net.tls.certificateKeyFile: <%= @ssl_key %>
 <% if @ssl_ca -%>
-net.ssl.CAFile: <%= @ssl_ca %>
+net.tls.CAFile: <%= @ssl_ca %>
 <% end -%>
 <% if @ssl_weak_cert -%>
 net.ssl.weakCertificateValidation: <%= @ssl_weak_cert %>
