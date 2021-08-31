@@ -64,6 +64,7 @@ class mongodb::server::config {
   $ssl_key          = $mongodb::server::ssl_key
   $ssl_ca           = $mongodb::server::ssl_ca
   $ssl_weak_cert    = $mongodb::server::ssl_weak_cert
+  $ssl_conn_nocert  = $mongodb::server::ssl_conn_nocert
   $ssl_invalid_hostnames = $mongodb::server::ssl_invalid_hostnames
   $ssl_mode         = $mongodb::server::ssl_mode
   $storage_engine   = $mongodb::server::storage_engine

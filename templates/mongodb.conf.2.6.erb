@@ -114,6 +114,9 @@ net.tls.certificateKeyFile: <%= @ssl_key %>
 <% if @ssl_ca -%>
 net.tls.CAFile: <%= @ssl_ca %>
 <% end -%>
+<% if @ssl_conn_nocert -%>
+net.tls.allowConnectionsWithoutCertificates: <%= @ssl_conn_nocert %>
+<% end -%>
 <% if @ssl_weak_cert -%>
 net.ssl.weakCertificateValidation: <%= @ssl_weak_cert %>
 <% end -%>
