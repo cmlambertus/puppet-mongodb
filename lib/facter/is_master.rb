@@ -9,7 +9,7 @@ end
 def get_options_from_hash_config(config)
   result = []
 
-  result << "--port #{config['net.port']}" unless config['net.port'].nil?
+  result << "--porto #{config['net.port']}" unless config['net.port'].nil?
   # use --ssl and --host if:
   # - sslMode is "requireSSL"
   # - Parameter --sslPEMKeyFile is set
