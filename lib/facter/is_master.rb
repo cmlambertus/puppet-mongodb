@@ -13,10 +13,10 @@ def get_options_from_hash_config(config)
   # use --ssl and --host if:
   # - sslMode is "requireSSL"
   # - Parameter --sslPEMKeyFile is set
-  # - Parameter --sslCAFile is set
+  # - Parameter --tlsCAFile is set
   result << "--ssl --host #{Facter.value(:fqdn)}" if config['net.tls.mode'] == 'requireTLS' || !config['net.tls.certificateKeyFile'].nil? || !config['net.tls.CAFile'].nil?
   result << "--sslPEMKeyFile #{config['net.tls.certificateKeyFile']}" unless config['net.tls.certificateKeyFile'].nil?
-  result << "--sslCAFile #{config['net.tls.CAFile']}" unless config['net.tls.CAFile'].nil?
+  result << "--tlsCAFile #{config['net.tls.CAFile']}" unless config['net.tls.CAFile'].nil?
   result << '--ipv6' unless config['net.ipv6'].nil?
 
   result.join(' ')
@@ -35,10 +35,10 @@ def get_options_from_keyvalue_config(file)
   # use --ssl and --host if:
   # - sslMode is "requireSSL"
   # - Parameter --sslPEMKeyFile is set
-  # - Parameter --sslCAFile is set
+  # - Parameter --tlsCAFile is set
   result << "--ssl --host #{Facter.value(:fqdn)}" if config['ssl'] == 'requireSSL' || !config['sslcert'].nil? || !config['sslca'].nil?
   result << "--sslPEMKeyFile #{config['sslcert']}" unless config['sslcert'].nil?
-  result << "--sslCAFile #{config['sslca']}" unless config['sslca'].nil?
+  result << "--tlsCAFile #{config['sslca']}" unless config['sslca'].nil?
   result << '--ipv6' unless config['ipv6'].nil?
 
   result.join(' ')
