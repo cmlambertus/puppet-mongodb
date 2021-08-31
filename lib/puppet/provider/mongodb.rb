@@ -65,7 +65,7 @@ class Puppet::Provider::Mongodb < Puppet::Provider
     args.push('--sslAllowInvalidHostnames') if ssl_invalid_hostnames(config)
 
     if ssl_is_enabled(config)
-      args.push('--ssl')
+      args.push('--tls')
       args += ['--tlsCertificateKeyFile', config['sslcert']]
 
       ssl_ca = config['sslca']
