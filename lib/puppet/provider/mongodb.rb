@@ -66,10 +66,10 @@ class Puppet::Provider::Mongodb < Puppet::Provider
 
     if ssl_is_enabled(config)
       args.push('--ssl')
-      args += ['--sslPEMKeyFile', config['sslcert']]
+      args += ['--tlsCertificateKeyFile', config['sslcert']]
 
       ssl_ca = config['sslca']
-      args += ['--sslCAFile', ssl_ca] unless ssl_ca.nil?
+      args += ['--tlsCAFile', ssl_ca] unless ssl_ca.nil?
     end
 
     args += ['--eval', cmd]
