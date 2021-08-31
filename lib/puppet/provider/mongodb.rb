@@ -32,9 +32,9 @@ class Puppet::Provider::Mongodb < Puppet::Provider
       'port' => config['net.port'],
       'ipv6' => config['net.ipv6'],
       'allowInvalidHostnames' => config['net.ssl.allowInvalidHostnames'],
-      'ssl' => config['net.ssl.mode'],
+      'ssl' => config['net.tls.mode'],
       'sslcert' => config['net.tls.certificateKeyFile'],
-      'sslca' => config['net.ssl.CAFile'],
+      'sslca' => config['net.tls.CAFile'],
       'auth' => config['security.authorization'],
       'shardsvr' => config['sharding.clusterRole'],
       'confsvr' => config['sharding.clusterRole']
